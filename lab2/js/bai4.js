@@ -63,7 +63,7 @@ function xoaphantucuoimang(){
 }
 
 function themtheoindex(){
-    if(giatriphantu.value === '' || isNaN(vitriphantu.value)){
+    if(giatriphantu.value === '' || isNaN(vitriphantu.value) || vitriphantu.value === ''){
         if(giatriphantu.value === ''){
             var them = document.getElementById('giatriphantu');
             them.classList.add('rung');
