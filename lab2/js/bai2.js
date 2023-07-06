@@ -131,7 +131,9 @@ function kiemtra(){
     input.style.display = 'none';
     var ketqua = document.getElementById('display_ketqua');
     ketqua.style.display = 'block';
+    ketqua.style.color = '';
     var cauhoi = document.getElementById('p_ketqua');
+    cauhoi.style.color = '';
     var ketqua1 = tamgiac(parseFloat(canh1.value),parseFloat(canh2.value),parseFloat(canh3.value)); 
     cauhoi.innerHTML = `Cạnh a = ${canh1.value} | Cạnh b = ${canh2.value} | Cạnh c = ${canh3.value}`+
     `<br> ${ketqua1}`;
