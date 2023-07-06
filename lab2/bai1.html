@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0 auto;
+            width: 1100px;
+            padding: 0;
+        }
+
+        li {
+            margin-left: 5px;
+        }
+ 
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 10px 30px;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            /* border: 1px solid gray; */
+            box-shadow: 4px 4px 8px gray;
+        }
+        ul>li:nth-child(2)>a{
+            background-color: rgb(179, 218, 252);
+        }
+        a:hover {
+            box-shadow: 0px 0px 2px blue;
+        }
+        nav {
+            margin-top: 40px;
+        }
+       hr{
+        margin: 40px auto;
+       }
+       h2{
+        text-align: center;
+       }
+       .phuongtrinh{
+        width: 500px;
+        height: 250px;
+        box-shadow: 1px 1px 8px gray;
+        margin: 0 auto;
+        padding-top: 10px;
+       }
+       .next,.see_log{
+        border-radius: 30px;
+        padding: 10px 15px;
+        font-weight: bold;
+        background-color: rgb(211, 197, 197);
+        color: black;
+        border: none;
+        font-size: 14px;
+       }
+       .next:hover,.see_log:hover{
+        background-color: rgb(173, 167, 167);    
+       }
+       .next:active{
+        background-color: orangered;
+       }
+       .see_log{
+        margin-left: 30px;
+       }
+       .button{
+        overflow: hidden;
+        
+        display: flex;
+        justify-content: center;
+       }
+       .ketqua{
+        width: 100%;
+        height: 180px;
+       }
+
+       .p_ketqua{
+        text-align: center;
+        font-size: 22px;
+        color: black;
+        line-height: 40px;
+       
+        margin: 0;
+       }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h2>LAB 2</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Trang chủ</a></li>
+                <li><a href="bai1.html">Giải phương trình bậc 2</a></li>
+                <li><a href="bai2.html">Kiểm tra hình tam giác</a></li>
+                <li><a href="bai3.html">Nhập họ và tên</a></li>
+                <li><a href="bai4.html">Thêm phần tử vào mảng</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <div class="phuongtrinh">
+            <div class="ketqua">
+                <p class="p_ketqua" id="hien_thi_phuong_trinh">
+                    JavaScript Cơ Bản
+                </p>
+                <p class="p_ketqua" id="hien_thi_ket_qua">
+                   
+                </p>
+            </div>
+            <div class="button">
+                <button class="next" id="next" onclick="thucThi()">Giải Phương trình bậc 2</button>
+                <button class="see_log" id="see_log" onclick="onoff_console()">Xem ở console.log</button>
+            </div>
+        </div>
+    </section>
+    <script src="./js/bai1.js"></script>
+</body>
+
+</html>

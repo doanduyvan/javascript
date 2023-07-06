@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0 auto;
+            width: 1100px;
+            padding: 0;
+        }
+
+        li {
+            margin-left: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 10px 30px;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            /* border: 1px solid gray; */
+            box-shadow: 4px 4px 8px gray;
+        }
+
+        ul>li:nth-child(3)>a {
+            background-color: rgb(179, 218, 252);
+        }
+
+        a:hover {
+            box-shadow: 0px 0px 2px blue;
+        }
+
+        nav {
+            margin-top: 40px;
+        }
+
+        body>hr {
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .khung {
+            width: 600px;
+            height: 350px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid gray;
+        }
+
+        .button {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 30px;
+            font-weight: bold;
+            border: none;
+            box-shadow: 0 0 2px gray;
+        }
+
+        button:hover {
+            background-color: rgb(163, 157, 157);
+        }
+
+        .display {
+            width: 100%;
+            height: 250px;
+            padding-top: 10px;
+
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;   
+            height: 240px;
+            width: 100%;
+            align-items: center;
+            display: none;
+        }
+
+        .input>div {
+            width: 80%;
+
+            display: flex;
+            align-items: center;
+            margin-left: 110px;
+        }
+
+        .input>div>input {
+            width: 70%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+            outline: none;
+        }
+
+        .input>div>img {
+            width: 30px;
+            display: none;
+        }
+
+        .input>button {
+            margin-top: 18px;
+        }
+        .input>button:active{
+            background-color: orangered;
+        }
+        .khung>hr {
+            width: 95%;
+            margin-bottom: 20px;
+        }
+
+        .rung {
+            border: 2px solid red;
+            animation: rung1 0.1s 2;
+        }
+
+        @keyframes rung1 {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .display_ketqua{
+            width: 100%;
+            height: 230px;
+            display: block;
+        }
+        .display_ketqua>p{
+            font-size: 22px;
+            line-height: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h2>LAB 2</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Trang chủ</a></li>
+                <li><a href="bai1.html">Giải phương trình bậc 2</a></li>
+                <li><a href="bai2.html">Kiểm tra hình tam giác</a></li>
+                <li><a href="bai3.html">Nhập họ và tên</a></li>
+                <li><a href="bai4.html">Thêm phần tử vào mảng</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <section>
+        <div class="khung">
+            <div class="display" id="display">
+                <div class="input" id="input">
+                    <div>
+                        <input type="text" class="canh" id="canh1" placeholder="Nhập cạnh a"
+                            title="Nhập cạnh của tam giác">
+                        <img class="img" src="hinhanh/0.png" alt="">
+                        <img class="img" src="hinhanh/1.png" alt="">
+                    </div>
+                    <div>
+                        <input type="text" class="canh" id="canh2" placeholder="Nhập cạnh b"
+                            title="Nhập cạnh của tam giác">
+                        <img class="img" src="hinhanh/0.png" alt="">
+                        <img class="img" src="hinhanh/1.png" alt="">
+                    </div>
+                    <div>
+                        <input type="text" class="canh" id="canh3" placeholder="Nhập cạnh c"
+                            title="Nhập cạnh của tam giác">
+                        <img class="img" src="hinhanh/0.png" alt="">
+                        <img class="img" src="hinhanh/1.png" alt="">
+                    </div>
+                    <button id="kiemtra" onclick="kiemtra()">Kiểm tra</button>
+                </div>
+                <div class="display_ketqua" id="display_ketqua">
+                    <p id="p_ketqua">JavaScript Cơ Bản</p>
+                </div>
+            </div>
+            <hr>
+            <div class="button">
+
+                <button onclick="cuasoprompt()">Nhập bằng cửa sổ prompt</button>
+                <button onclick="thucThiInPut()">Nhập bằng thẻ input</button>
+                <button onclick="onoff()" id="seelog">Xem ở console.log</button>
+            </div>
+        </div>
+    </section>
+    <script src="./js/bai2.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0 auto;
+            width: 1100px;
+            padding: 0;
+        }
+
+        li {
+            margin-left: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 10px 30px;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            /* border: 1px solid gray; */
+            box-shadow: 4px 4px 8px gray;
+        }
+
+        ul>li:nth-child(5)>a {
+            background-color: rgb(179, 218, 252);
+        }
+
+        a:hover {
+            box-shadow: 0px 0px 2px blue;
+        }
+
+        nav {
+            margin-top: 40px;
+        }
+
+        .hr {
+            margin: 40px auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .khung {
+            width: 800px;
+            height: 430px;
+            border: 1px solid gray;
+            margin: 0 auto;
+        }
+
+        .display {
+            width: 100%;
+            height: 40%;
+            padding: 10px;
+        }
+
+        .button {
+            width: 100%;
+            
+            text-align: center;
+        }
+
+        .input1 {
+            padding: 8px;
+            margin-bottom: 35px;
+            margin-top: 20px;
+            width: 200px;
+            outline: none;
+        }
+
+        .button1 {
+            padding: 0;
+            text-align: left;
+        }
+
+        #input2 {
+            width: 75%;
+            border: none;
+            outline: none;
+            padding: 10px;
+            height: 100%;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        button{
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            font-weight: bold;
+           
+        }
+        button:hover{
+            background-color: rgb(170, 162, 162);
+        }
+        button:active{
+            background-color: orangered;
+        }
+        #p_display{
+            text-align: center;
+            font-size: 20px;
+            padding-top: 30px;
+            
+        }
+        .rung {
+            border: 2px solid red;
+            animation: rung1 0.1s 2;
+        }
+
+        @keyframes rung1 {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+        .themvaxoa{
+            
+            display: inline-block;
+            padding: 0px 2px;
+            border-radius: 10px;
+        }
+        .themvaxoa>input{
+            padding: 8px;
+            width: 70px;
+            border-radius: 10px;
+            outline: none;
+        }
+        .themvaxoa>button{
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h2>LAB 2</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Trang chủ</a></li>
+                <li><a href="bai1.html">Giải phương trình bậc 2</a></li>
+                <li><a href="bai2.html">Kiểm tra hình tam giác</a></li>
+                <li><a href="bai3.html">Nhập họ và tên</a></li>
+                <li><a href="bai4.html">Thêm phần tử vào mảng</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr class="hr">
+
+    <section>
+        <div class="khung">
+            <div class="display" id="display">
+                <p id="p_display"></p>
+            </div>
+            <hr>
+            <div class="button" id="button">
+                <input type="text" class="input1" id="giatriphantu" placeholder="Nhập giá trị phần tử"> <br>
+                <button id="themdau" onclick="themphantudaumang()">Thêm phần tử đầu mảng</button>
+                <!-- <button class="button1" id="themindex" onclick="themtheoindex()"><input type="text" id="input2" placeholder="Nhập vị trí muốn thêm"
+                        title="Nhập vị trí muốn thêm"></button> -->
+                        <div class="themvaxoa">
+                            <input type="text" id="nhapindex" placeholder="Nhập index">
+                            <button onclick="themtheoindex()">Thêm</button>
+                            <button onclick="xoatheoindex()">Xóa</button>
+                        </div>
+                <button id="themcuoi" onclick="themphantucuoimang()" >Thêm phần tử vào cuối mảng</button>     <br>   
+                <button id="xoadau" onclick="xoaphantudaumang()">Xóa phần tử đầu mảng</button>
+                
+                <button id="xoacuoi" onclick="xoaphantucuoimang()">Xóa phần tử cuối mảng</button>
+            </div>
+        </div>
+    </section>
+    <script src="js/bai4.js"></script>
+</body>
+
+</html>
