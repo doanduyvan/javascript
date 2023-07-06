@@ -63,13 +63,13 @@ function xoaphantucuoimang(){
 }
 
 function themtheoindex(){
-    if(giatriphantu.value === '' || !/\d/.test(vitriphantu.value)){
+    if(giatriphantu.value === '' || isNaN(vitriphantu.value)){
         if(giatriphantu.value === ''){
             var them = document.getElementById('giatriphantu');
             them.classList.add('rung');
             setTimeout(()=>{them.classList.remove('rung')},500);
         }
-        if(!/\d/.test(vitriphantu.value)){
+        if(isNaN(vitriphantu.value) || vitriphantu.value === ''){
             var them1 = document.getElementById('nhapindex');
             them1.classList.add('rung');
             setTimeout(()=>{them1.classList.remove('rung')},500);
@@ -94,7 +94,7 @@ function themtheoindex(){
 
 
 function xoatheoindex(){
-    if(!/\d/.test(vitriphantu.value)){
+    if(isNaN(vitriphantu.value) || vitriphantu.value === ''){
         var them1 = document.getElementById('nhapindex');
         them1.classList.add('rung');
         setTimeout(()=>{them1.classList.remove('rung')},500);
@@ -122,4 +122,3 @@ function xoatheoindex(){
     vitriphantu.value = '';
     console.log('Mảng sau khi được thay đổi Array:',mangcodinh);
 }
-
