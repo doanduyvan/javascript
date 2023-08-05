@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        section>div{
+            width: 300px;
+            height: 500px;
+            /* background-color: aqua; */
+            border: 1px solid gray;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        section>div>span{
+            font-size: 25px;
+            border: 1px solid gray;
+            width: 200px;
+            height: 50px;
+            line-height: 47px;
+            text-align: center;
+            user-select: none;
+        }
+        section>div>span:hover{
+            background-color: orangered;
+            color: white;
+            border: none;
+        }
+      .title{
+        position: relative;
+      }
+      .itemtt{
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+      }
+      .lab{
+        margin-top: 40px;
+        margin-bottom: 60px;
+      }
+      .lab>p{
+        text-align: center;
+        font-size: 40px;
+      }
+    </style>
+</head>
+<body>
+    <div class="lab">
+        <p>Đoàn Duy Vấn - PS37009</p>
+        <p>LAB 7</p>
+    </div>
+    <section>
+        <div class="box">
+
+        </div>
+        <div class="box">
+
+        </div>
+        <div class="title">
+            <p class="itemtt">Phần tử cố định</p>
+            <span id="item1">one</span>
+            <span id="item2">two</span>
+            <span id="item3">three</span>
+            <span id="item4">four</span>
+            <span id="item5">five</span>
+        </div>
+    </section>
+    <script src="lab7.js"></script>
+</body>
+</html>

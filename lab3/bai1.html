@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bai1.css">
+</head>
+<body>
+    <section>
+        <div class="khung">
+            <div class="menu1" id="menu">
+            <div class="head">
+            <div class="input">
+            <input type="text" id="toan" placeholder="Nhập điểm toán">
+            <p class="thongbao"> </p>
+            <input type="text" id="ly" placeholder="Nhập điểm lý">
+            <p class="thongbao"> </p>
+            <input type="text" id="hoa" placeholder="Nhập điểm hóa">
+            <p class="thongbao"> </p>
+            <input type="text" id="sinh" placeholder="Nhập điểm sinh">
+            <p class="thongbao"> </p>
+            </div>
+            </div>
+            <div class="button">
+                <button onclick="kiemtra()">Kiểm Tra</button>
+            </div>
+            <div class="thaydoi">
+                <button onclick="nhapif()" id="nhapif">Nhập bằng if 
+                <span></span>
+                <span></span>
+                <span></span> 
+                <span></span>  
+                </button>
+                <button onclick="nhapswitch()" id="nhapswitch">Nhập bằng Switch 
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>  
+                    </button>
+            </div>
+            </div>
+            <div class="ketqua" id="ketqua">
+                <p id="in_ketqua"></p>
+                <button onclick="nhaplai()">Nhập lại</button>
+            </div>
+            
+        </div>
+    </section>
+    <script src="js/bai1.js"></script>
+</body>
+</html>

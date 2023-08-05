@@ -1,0 +1,141 @@
+section{
+   padding-top: 100px;
+}
+.maytinh{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+button{
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
+    border-radius: 50%;
+}
+button:hover{
+    background-color: rgb(170, 168, 165);
+}
+button:active{
+    transform: scale(0.8)
+}
+.khung{
+    width: 311px;
+    border: 1px solid rgb(97, 91, 91);
+    padding: 5px;
+    margin: 0 auto;
+    position: relative;
+}
+.khung>h2{
+    text-align: center;
+}
+.p_ketqua{
+    
+    font-size: 45px;
+    background-color: rgb(207, 205, 205);
+    width: 100%;
+    height: 50px;
+    line-height: 52px;
+    text-align: right;
+    margin: 15px auto;
+    /* display: flex;
+    justify-content: right;
+    align-items: center; */
+    overflow: hidden;
+}
+.border{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(221, 99, 17);
+    box-shadow: 0 0 50px yellow;
+    top: -7px;
+    left: -6px;
+    /* left: 98%;
+    top: 99%; */
+    animation: chay 3s linear infinite; 
+}
+
+@keyframes chay{
+    0%{
+        top: -7px;
+         left: -6px;
+    }
+    25%{
+        top: -7px;
+         left: 98%;
+    }
+    50%{
+        top: 99%;
+        left: 98%;
+    }
+    75%{
+        top: 99%;
+        left: -6px;
+    }
+    100%{
+        top: -7px;
+         left: -6px;
+    }
+}
+
+.border2{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgb(9, 252, 102);
+    box-shadow: 0 0 50px yellow;
+    top: 99%;
+    left: 98%;
+    animation: chay1 3s linear infinite; 
+}
+@keyframes chay1{
+    0%{
+    top: 99%;
+    left: 98%;
+    }
+    25%{
+        top: 99%;
+        left: -6px;
+    }
+    50%{
+        top: -7px;
+         left: -6px;
+    }
+    75%{
+        top: -7px;
+        left: 98%;
+    }
+    100%{
+        top: 99%;
+        left: 98%;
+    }
+}
+
+*{
+    margin: 0;
+}
+.nen{
+    background: linear-gradient(90deg,transparent,rgb(230, 230, 247),transparent,rgb(234, 234, 245),transparent);
+    animation: rung 5s linear infinite;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+    position: absolute;
+}
+body{
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes rung{
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}

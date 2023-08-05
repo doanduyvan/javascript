@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="lab5.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="khung">
+        <h3>TODO LIST</h3>
+        <div class="head">
+            <label for="tentask">Tên task</label>
+            <div class="div_tentask"><input type="text" id="tentask"></div>
+            <p class="thongbao"></p>
+            <label for="mota">Mô Tả</label>
+            <textarea name="" id="mota" cols="30" rows="7"></textarea>
+            <p class="thongbao"></p>
+            <div id="khung_button">
+                <div id="khung1_button">
+                    <button onclick="addtask()" id="add">ADD</button>
+                </div>
+            </div>
+        </div>
+        <span>Danh sách tasks</span>
+    </div>
+    <div class="display" id="display">
+        <!-- <div>
+            <span>1</span>
+            <span>demotest</span>
+            <span>kích vào xem chi k k k k k k k k k k k k j j j j j jj j j j j j j j j jk k k...</span>
+            <button>Delete</button>
+            <button>Edit</button>
+        </div>
+        <div>
+            <span>1</span>
+            <span>demotest</span>
+            <span>kích vào xem chi k k k k k k k k k k k k k k k...</span>
+            <button>Delete</button>
+            <button>Edit</button>
+        </div> --> 
+
+    </div>
+    <div class="gallery">
+        <div class="chinhsua">
+                <i class="fa-solid fa-xmark" id="close"></i>
+                <label for="tentask_edit">Tên task</label>
+                <input type="text" id="tentask_edit">
+                <p class="thongbao_edit"></p>
+                <label for="mota_edit">Mô Tả</label>
+                <textarea name="" id="mota_edit" cols="30" rows="7"></textarea>
+                <p class="thongbao_edit"></p>
+                <hr>
+                <button id="add_edit">Cập Nhật</button>
+        </div>
+    </div>
+</div>
+    <script src="lab5.js"></script>
+</body>
+</html>
