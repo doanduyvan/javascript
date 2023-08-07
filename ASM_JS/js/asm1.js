@@ -184,69 +184,38 @@ const patternphone = /^0[0-9]{9}$/;
 const patternemail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
 
 fname.addEventListener('input',()=>{
-    if(fname.value === ''){
-        thongbao[0].innerHTML = '';
-        theodoi[0] = true;
-    }else if(patternfname.test(fname.value)){
-        thongbao[0].style.color = 'blue';
-        thongbao[0].innerHTML = 'You entered correctly';
-        theodoi[0] = false;
-    }else{
-        thongbao[0].style.color = 'red';
-        thongbao[0].innerHTML = 'You entered wrong!';
-        theodoi[0] = true;
-    }
+    check(fname.value,patternfname,0);
 });
 lname.addEventListener('input',()=>{
-    if(lname.value === ''){
-        thongbao[1].innerHTML = '';
-        theodoi[1] = true;
-    }else if(patternlname.test(lname.value)){
-        thongbao[1].style.color = 'blue';
-        thongbao[1].innerHTML = 'You entered correctly';
-        theodoi[1] = false;
-    }else{
-        thongbao[1].style.color = 'red';
-        thongbao[1].innerHTML = 'You entered wrong!';
-        theodoi[1] = true;
-    }
+  check(lname.value,patternlname,1);
 });
 phone.addEventListener('change',()=>{
-    if(phone.value === ''){
-        thongbao[2].innerHTML = '';
-        theodoi[2] = true;
-    }else if(patternphone.test(phone.value)){
-        thongbao[2].style.color = 'blue';
-        thongbao[2].innerHTML = 'You entered correctly';
-        theodoi[2] = false;
-    }else{
-        thongbao[2].style.color = 'red';
-        thongbao[2].innerHTML = 'You entered wrong!';
-        theodoi[2] = true;
-    }
+  check(phone.value,patternphone,2)
 });
 email.addEventListener('change',()=>{
-    if(email.value === ''){
-        thongbao[3].innerHTML = '';
-        theodoi[3] = true;
-    }else if(patternemail.test(email.value)){
-        thongbao[3].style.color = 'blue';
-        thongbao[3].innerHTML = 'You entered correctly';
-        theodoi[3] = false;
-    }else{
-        thongbao[3].style.color = 'red';
-        thongbao[3].innerHTML = 'You entered wrong!';
-        theodoi[3] = true;
-    }
+    check(email.value,patternemail,3)
 });
-textarea.addEventListener('change',()=>{
-    if(textarea.value === ''){
-        theodoi[4] = true;
+
+function check(value,pattern,index){
+    if(value === ''){
+        thongbao[index].innerHTML = '';
+        theodoi[index] = true;
+    }else if(pattern.test(value)){
+        thongbao[index].style.color = 'blue';
+        thongbao[index].innerHTML = 'You entered correctly';
+        theodoi[index] = false;
     }else{
-        theodoi[4] = false;
+        thongbao[index].style.color = 'red';
+        thongbao[index].innerHTML = 'You entered wrong!';
+        theodoi[index] = true;
     }
+}
+
+textarea.addEventListener('change',()=>{
+    theodoi[4] = textarea.value === '' ? true : false;
 });
 submit.addEventListener('click',()=>{
+    console.log(theodoi);
     let temp = true;
     theodoi.forEach((data,index)=>{
         if(data===true){
@@ -264,6 +233,7 @@ submit.addEventListener('click',()=>{
      for(let i=0;i<thongbao.length-1;i++){
         thongbao[i].innerHTML = '';
      }
+     theodoi.forEach(function(data,index){theodoi[index]=true});
     }else{
         thongbao[4].style.color = 'red';
         thongbao[4].innerHTML = 'Submitted Failed';
@@ -275,30 +245,41 @@ submit.addEventListener('click',()=>{
 
 // cuon trang 
 const hearder = document.querySelector('header');
-const section1 = document.querySelector('.section1');
-const section2 = document.querySelector('.section2');
-const section3 = document.querySelector('.section3');
-const section5 = document.querySelector('.section5');
-const section7 = document.querySelector('.section7');
+// const section1 = document.querySelector('.section1');
+// const section2 = document.querySelector('.section2');
+// const section3 = document.querySelector('.section3');
+// const section5 = document.querySelector('.section5');
+// const section7 = document.querySelector('.section7');
 
 const li = document.querySelectorAll('.menu_ul li');
-li.forEach((data,index)=>{
+// li.forEach((data,index)=>{
+//     data.addEventListener('click',()=>{
+//         if(index===0){
+//             hearder.scrollIntoView({ behavior: 'smooth' });
+//         }else if(index===1){
+//             section1.scrollIntoView({ behavior: 'smooth' });
+//         }else if(index===2){
+//             section2.scrollIntoView({ behavior: 'smooth' });
+//         }else if(index===3){
+//             section3.scrollIntoView({ behavior: 'smooth' });
+//         }else if(index===4){
+//             section5.scrollIntoView({ behavior: 'smooth' });
+//         }else if(index===5){
+//             section7.scrollIntoView({ behavior: 'smooth' });
+//         }
+//     });
+// });
+
+li.forEach(data=>{
     data.addEventListener('click',()=>{
-        if(index===0){
-            hearder.scrollIntoView({ behavior: 'smooth' });
-        }else if(index===1){
-            section1.scrollIntoView({ behavior: 'smooth' });
-        }else if(index===2){
-            section2.scrollIntoView({ behavior: 'smooth' });
-        }else if(index===3){
-            section3.scrollIntoView({ behavior: 'smooth' });
-        }else if(index===4){
-            section5.scrollIntoView({ behavior: 'smooth' });
-        }else if(index===5){
-            section7.scrollIntoView({ behavior: 'smooth' });
-        }
+        const test = data.getAttribute('value');
+        const test1 = document.querySelector(test);
+        test1.scrollIntoView({ behavior: 'smooth' });
     });
 });
+
+
+
 
 muiten.onclick = ()=>{
     hearder.scrollIntoView({ behavior: 'smooth' });
