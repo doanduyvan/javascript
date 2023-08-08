@@ -114,8 +114,8 @@ nen_video.onclick = function(e){
 const price = document.querySelectorAll('.price>p');
 const dongdo = document.getElementById('dongho');
 const thongbaotime = document.querySelector('.thongbao_hetgio');
-let phut = 5;
-let giay = 0;
+let phut = 0;
+let giay = 10;
 
 const interval = setInterval(()=>{
      if(giay === 0){
@@ -144,7 +144,7 @@ function saleoff(){
     price[0].innerHTML = 'Price: $1500';
     price[1].innerHTML = 'Price: $1300';
     price[2].innerHTML = 'Price: $1800';
-    setTimeout(()=>{demnguoc.style.display = 'none'},5000);
+    setTimeout(()=>{demnguoc.style.display = 'none'},3000);
 }
 
 
@@ -245,30 +245,8 @@ submit.addEventListener('click',()=>{
 
 // cuon trang 
 const hearder = document.querySelector('header');
-// const section1 = document.querySelector('.section1');
-// const section2 = document.querySelector('.section2');
-// const section3 = document.querySelector('.section3');
-// const section5 = document.querySelector('.section5');
-// const section7 = document.querySelector('.section7');
 
 const li = document.querySelectorAll('.menu_ul li');
-// li.forEach((data,index)=>{
-//     data.addEventListener('click',()=>{
-//         if(index===0){
-//             hearder.scrollIntoView({ behavior: 'smooth' });
-//         }else if(index===1){
-//             section1.scrollIntoView({ behavior: 'smooth' });
-//         }else if(index===2){
-//             section2.scrollIntoView({ behavior: 'smooth' });
-//         }else if(index===3){
-//             section3.scrollIntoView({ behavior: 'smooth' });
-//         }else if(index===4){
-//             section5.scrollIntoView({ behavior: 'smooth' });
-//         }else if(index===5){
-//             section7.scrollIntoView({ behavior: 'smooth' });
-//         }
-//     });
-// });
 
 li.forEach(data=>{
     data.addEventListener('click',()=>{
@@ -277,10 +255,38 @@ li.forEach(data=>{
         test1.scrollIntoView({ behavior: 'smooth' });
     });
 });
-
-
-
-
 muiten.onclick = ()=>{
     hearder.scrollIntoView({ behavior: 'smooth' });
 }
+
+
+
+
+// test
+
+document.addEventListener('scroll',temp);
+function temp(){
+    const s3 = document.querySelector('.section3');
+    const tops3 = s3.getBoundingClientRect().top;
+    const heightwin = window.innerHeight;
+    if(tops3+500 < heightwin){
+        fs3();
+        document.removeEventListener('scroll',temp);
+    }
+}
+let arrays3 = [0,0,0,0];
+function fs3(){
+    const ontop = document.querySelectorAll('.s3_div1_2_2>div>p:first-child');
+    intev(0,500,10);
+    intev(1,250,20);
+    intev(2,15,500);
+    intev(3,10,500);
+    function intev(index,dieukien,time){
+    const interv1 = setInterval(()=>{
+        arrays3[index] ++ ;
+        if(arrays3[index]===dieukien){clearInterval(interv1)}
+        ontop[index].innerHTML = `${arrays3[index]}K+`;
+    },time);
+}
+}
+

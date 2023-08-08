@@ -228,6 +228,7 @@ nav>.div_nav>ul>li{
     bottom: 0;
     left: 50%;
     transform: translate(-50%,50%);
+    z-index: 10;
 }
 #MyForm1{
     width: 100%;
@@ -263,6 +264,15 @@ nav>.div_nav>ul>li{
     /* margin-top: 140px;  */
     padding-top: 140px;
     background-color: white;
+    position: relative;
+}
+.scrollview3{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50px;
+    left: 0;
+    /* background-color: #007bff; */
 }
  .wrapper1{
     width: 1400px;
@@ -540,6 +550,14 @@ nav>.div_nav>ul>li{
     background-color: white;
     z-index: 1;
     padding-top: 50px;
+    position: relative;
+}
+.scrollview2{
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    top: -60px;
+    left: 0;
 }
 .wrapper3{
     width: 1400px;
@@ -791,7 +809,9 @@ nav>.div_nav>ul>li{
     padding-top: 10px;
     /* margin-top: 40px; */
     padding-bottom: 150px;
+    
 }
+
 .wrapper5{
     width: 1400px;
     margin: 0 auto;
@@ -1043,6 +1063,16 @@ nav>.div_nav>ul>li{
     background-repeat: no-repeat;
     background-size: 100% 100%;
     /* background-position: 0 -100px; */
+    position: relative;
+}
+.scrollview1{
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    /* background-color: #007bff; */
+    top: -65px;
+    left: 0;
+    /* z-index: 999; */
 }
 .wrapper7{
     width: 1400px;
