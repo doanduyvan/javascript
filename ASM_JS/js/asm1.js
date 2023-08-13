@@ -61,7 +61,7 @@ prev.onclick = ()=>{
     active--;
     dot();
     autoslide();
-}
+}  
 
 function autoslide(){
     const positionX = slides[active].offsetLeft;
@@ -215,7 +215,6 @@ textarea.addEventListener('change',()=>{
     theodoi[4] = textarea.value === '' ? true : false;
 });
 submit.addEventListener('click',()=>{
-    console.log(theodoi);
     let temp = true;
     theodoi.forEach((data,index)=>{
         if(data===true){
@@ -262,7 +261,7 @@ muiten.onclick = ()=>{
 
 
 
-// test
+// hiệu ứng số tăng dần từ 0
 
 document.addEventListener('scroll',temp);
 function temp(){
@@ -289,4 +288,93 @@ function fs3(){
     },time);
 }
 }
+
+// dùng Geolocation
+
+const li5 = document.querySelector('.menu_topbar>ul:first-child>li:nth-child(4)');
+li5.onclick = function(){
+    navigator.geolocation.getCurrentPosition(
+        function(position){
+            const link = `https://www.google.com/maps/@${position.coords.latitude},${position.coords.longitude},14z?hl=vi-VN&entry=ttu`;
+            window.open(link,"My Location","width=1000px,height=500px");
+        }, function(err){
+            console.log(err)
+        }
+    );
+}
+
+// dùng mouseover và mouseleave để ẩn hiện thanh tìm kiếm
+
+const btn_timkiem = document.querySelector('.menu_topbar>ul:last-child>li:last-child');
+btn_timkiem.addEventListener('mouseover',function(){
+    const li = this;
+    const div_timkiem = document.querySelector('.div_timkiem');
+    div_timkiem.classList.add('div_timkiemover');
+    document.addEventListener('click',removeelement);
+    function removeelement(e){
+        const input = document.querySelector('.div_timkiem input');
+        const img = document.querySelector('.menu_topbar>ul:last-child>li:last-child img');
+        if(e.target == input || e.target == img || e.target == next){
+            return;
+        }else{
+        div_timkiem.classList.remove('div_timkiemover');
+        document.removeEventListener('click',removeelement);
+        }
+    }
+});
+
+// test xóa trước khi bảo vệ
+
+const img = document.querySelector('.menu_topbar>ul:last-child>li:last-child img');
+img.addEventListener('click',()=>{
+    const input = document.querySelector('.div_timkiem input');
+    const root = document.querySelector('header');
+    root.style.background = input.value;
+    console.log(input.value)
+});
+
+
+
+// giftvoucher
+
+function giftbox(){
+    const galerry = document.querySelector('.galerry');
+    const close = document.querySelector('.close');
+    const gift = document.createElement('div');
+    const giftvoucher = document.querySelector('.giftvoucher');
+    gift.classList.add('gift');
+    gift.style.left = Math.random()*window.innerWidth + 'px';
+    giftvoucher.appendChild(gift);
+    gift.onclick = ()=>{
+        clearInterval(interv2);
+        galerry.style.display = 'grid';
+        const voucher = document.querySelector('.voucher');
+        setTimeout(()=>{voucher.classList.toggle('voucher1');},100)
+        const dl = document.getElementById('dolla');
+        dl.innerText = Math.floor(Math.random()*900+100);
+        close.onclick = ()=>{
+            voucher.classList.toggle('voucher1');
+            setTimeout(()=>{galerry.style.display = 'none';},1000);
+            callinterval();
+        }
+        gift.remove();
+    }
+    setTimeout(()=>{gift.remove()},20000);
+}
+let interv2;
+function callinterval(){
+    interv2 = setInterval(()=>{
+    giftbox()
+},20000)
+}
+// callinterval();
+giftbox()
+
+
+
+
+
+
+
+
 
