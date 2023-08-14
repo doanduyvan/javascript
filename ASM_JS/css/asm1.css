@@ -1285,17 +1285,31 @@ footer{
 }
 
 .section9{
-    padding-top: 50px;
-    padding-bottom: 30px;
+    width: 100%;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    backdrop-filter: blur(10px);
 }
+
 .wrapper9{
-    width: 1400px;
+    width: 1100px;
+    padding: 30px 0;
     margin: 0 auto;
+    background: url('../image/panorama-2117310_1920.jpg');
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    box-shadow: 6px 6px 5px #0d3521;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
-.wrapper9>div{
-    margin-left: 100px;
+.wrapper9>div:first-child{
+    /* margin-left: 100px; */
+    /* background-color: #007bff; */
+    /* order: 2; */
 }
-.wrapper9>div>p:first-child{
+.wrapper9>div:first-child>p:first-child{
     color: white;
     font-size: 40px;
     font-weight: 900;
@@ -1387,6 +1401,42 @@ footer{
         transform: translateX(-5px);
     }
 }
+.textinput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    justify-content: center;
+    gap: 5px;
+    color: white;
+}
+.textinput>p:first-child{
+    font-size: 50px;
+    font-weight: 600;
+}
+.textinput>p:nth-child(2){
+    font-size: 30px;
+    font-weight: bold;
+}
+.textinput>p:nth-child(3){
+    width: 400px;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+.imgtext{
+    margin-top: 5px;
+    display: flex;
+    gap: 20px;
+}
+.imgtext>img{
+    width: 30px;
+}
+.imgtext>img:hover{
+    transform: scale(1.1);
+}
+
+
 
 .menu_ul>li{
     /* background-color: #007bff; */
